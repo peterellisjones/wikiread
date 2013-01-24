@@ -1,0 +1,22 @@
+.row
+  .span12
+  %h2
+    Which Wikipedia article has the higher 
+    = precede ' ' do
+      %a{href: "http://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_Readability_Test#Flesch.E2.80.93Kincaid_Grade_Level"}> Flesch-Kincaid Grade Level
+      ?
+.row.articles
+  .span5.offset1.article.first
+    %a.btn.btn-primary.btn-huge.title title
+    .results
+      .number 8.2
+      %a.wikilink{href:'#'} read on wikipedia
+  .span5.article.second
+    %a.btn.btn-primary.btn-huge.title title
+    .results
+      .number 11.3
+      %a.wikilink{href: '#'} read on wikipedia
+
+
+:javascript
+  window.articles = [#{@articles.inject('') { |a, b| a += b + ', ' }}];
