@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'redis'
+gem 'redis', :git => "git://github.com/redis/redis-rb.git"
 gem 'lingua'
 gem 'nokogiri'
 
@@ -13,5 +13,6 @@ end
 
 gem 'jquery-rails'
 gem "bootstrap-sass", ">= 2.0.3"
+gem 'bootswatch-rails'
 gem "haml", ">= 3.1.6"
 gem "haml-rails", ">= 0.3.4", :group => :development
