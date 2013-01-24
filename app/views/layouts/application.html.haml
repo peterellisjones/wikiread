@@ -15,7 +15,7 @@
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
         .container
-          = render 'layouts/navigation'
+        = render 'layouts/navigation'
     #main{:role => "main"}
       .container
         .content
@@ -23,4 +23,9 @@
             .span12
               = render 'layouts/messages'
           = yield
-          %footer
+    .navbar.navbar-fixed-bottom
+      .row
+        .span12
+          .footer.pull-right
+            Created by 
+            = link_to 'Peter Ellis Jones', 'http://ukoki.com'
