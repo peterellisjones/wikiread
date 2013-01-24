@@ -4,8 +4,14 @@ require 'lingua'
 require 'json'
 require 'redis'
 
-task :add_articles, :count do |t, args|
+if Rails.env == 'production'
+  uri = URI.parse(ENV["REDISCLOUD_URL"])
+  $redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+else
   $redis = Redis.new(:host => 'localhost', :port => 6379)
+end
+
+task :add_articles, :count do |t, args|
   args.with_defaults(:count => '1')
   url = "http://en.wikipedia.org/wiki/Special:Random"
   args[:count].to_i.times do
