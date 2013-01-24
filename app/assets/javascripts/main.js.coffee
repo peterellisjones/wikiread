@@ -72,7 +72,7 @@ correct = 0.0
 
 update_score = (p) ->
   total_tries += 1
-  total_score += p*2 - 1
+  total_score += p
   if p == 1
     current_chain += 1
     if longest_chain < current_chain
@@ -80,7 +80,7 @@ update_score = (p) ->
   else
     current_chain = 0
   correct = Number(100.0 * total_score / total_tries).toFixed(0)
-  $('.score').text "Score: #{total_score}"
+  $('.score').text "Score: #{total_score*2 - total_tries}"
   $('.currentchain').text "Current Chain: #{current_chain}"
   $('.longestchain').text "Longest Chain: #{longest_chain}"
   $('.correct').text "Correct: #{correct}%"
