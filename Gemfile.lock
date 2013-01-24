@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/redis/redis-rb.git
   revision: 24c4858afbc2b87fe032a417549e0bfa70aa0133
+  ref: 24c4858afbc2b87fe032a417549e0bfa70aa0133
   specs:
     redis (3.0.2)
 
