@@ -72,7 +72,7 @@ correct = 0.0
 
 update_score = (p) ->
   total_tries += 1
-  total_score += p
+  total_score += p*2-1
   if p == 1
     current_chain += 1
     if longest_chain < current_chain
