@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'redis', :git => "git://github.com/redis/redis-rb.git"
+gem 'redis', '3.0.1'
 gem 'lingua'
 gem 'nokogiri'
 
