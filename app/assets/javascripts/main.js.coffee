@@ -1,6 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+window.dev_mode = false
+
 display_articles = () ->
   arts = window.pair
   $('.article.first .title').text(arts[0].title)
@@ -16,11 +15,14 @@ display_articles = () ->
 enough_articles = true
 
 get_articles = (fn) ->
-  console.log "fetching..."
+  if window.dev_mode
+    console.log "fetching..."
   $.get '/articles.json', null, (data) ->
     data = data.map (e) -> JSON.parse(e)
     window.articles = data.concat(window.articles)
-    console.log "Now have #{window.articles.length}"
+    if window.dev_mode
+      console.log "Now have #{window.articles.length}"
+      console.log window.articles
     fn()
 
 next_articles = () ->
